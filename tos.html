@@ -4,114 +4,301 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Important Message</title>
-    <style>
-        body {
-            background-color: #000;
-            color: #fff;
-            font-family: Arial, sans-serif;
-            padding: 20px;
-            margin: 0;
-        }
-        .container {
-            max-width: 600px;
-            margin: auto;
-            text-align: center;
-        }
-        h1 {
-            font-size: 2em;
-            margin-bottom: 20px;
-        }
-        p {
-            font-size: 1.2em;
-            line-height: 1.6;
-        }
-        .back-button {
-            background-color: #333;
-            color: #fff;
-            border: none;
-            padding: 10px 20px;
-            text-align: center;
-            text-decoration: none;
-            display: inline-block;
-            font-size: 16px;
-            cursor: pointer;
-            margin-top: 20px;
-        }
-        .topbar {
-  background-color: #222;
-  font-family: Arial, sans-serif;
-  color: white;
-  padding: 0px;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 9999;
-}
+  <style>
+      html {
+          overflow-x: hidden;
+      }
 
-.topbar a {
-  color: white;
-  text-decoration: none;
-  margin: 5px 10px;
-}
+      input[type=text], select, option {
+          line-height: 1.2;
+          color: white;
+          background: #282828;
+          border: 0;
+          border-radius: 2px;
+          display: inline-block;
+          -webkit-font-smoothing: antialiased;
+          outline: none;
+          padding: 7px 5px;
+          width: 200px;
+      }
 
-.topbar a:last-child {
-  margin-right: 25px; /* Adjust the margin-right as needed */
-}
+      input[type=text]::placeholder {
+          color: rgb(167, 167, 167);
+      }
 
-.topbar a:hover {
-  text-decoration: underline;
-}
+      input[type=submit] {
+          line-height: 1.2;
+          color: white;
+          background: #282828;
+          border: 0;
+          border-radius: 2px;
+          display: inline-block;
+          -webkit-font-smoothing: antialiased;
+          outline: none;
+          padding: 7px 5px;
+      }
 
-/* Container styles */
-.container {
-  margin-top: 0px; /* Adjust top margin to avoid content behind topbar */
-  padding: 20px;
-  font-family: Arial, sans-serif;
-}
+      input, select, option {
+          font-size: 100%;
+      }
 
-/* Hall of Fame styles */
-.hof {
-  border: 1px solid #ccc;
-  padding: 20px;
-  margin-bottom: 20px;
-  background-color: #f9f9f9;
-}
+      input[type=submit]:hover {
+          color: white;
+          background: #3d3d3d;
+          text-decoration: none;
+      }
 
-.person {
-  width: calc(50% - 20px);
-  display: inline-block;
-  vertical-align: top;
-}
+      .center {
+          text-align: center;
+      }
 
-.person img {
-  max-width: 100%;
-  height: auto;
-  margin-bottom: 10px;
-}
+      .admin-text {
+          color: red;
+          font-weight: bold;
+      }
 
-.hof h2 {
-  margin-top: 0;
-}
+      .doxbin-text {
+          text-align: center;
+          background-color: inherit;
+          line-height: 15px;
+          border: none;
+          color: white;
+          padding-bottom: 0;
+          margin-bottom: 0;
+      }
 
-.hof p {
-  margin-bottom: 10px;
-}
+      .hoa-title {
+          margin: 5px 0 0 0;
+          letter-spacing: 2px;
+      }
 
-.hof .inductee {
-  font-weight: bold;
-}
+      .hoa-container {
+          border: solid 1px rgb(40, 40, 40);
+          background-color: rgb(14, 14, 14);
+          width: 32%;
+          border-radius: 2px;
+          float: left;
+          margin: 10px 5px 10px 5px;
+          position: relative;
+          padding: 15px;
+          -webkit-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
+          -moz-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
+          box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
+          height: 460px;
+      }
 
-.hof .description {
-  font-style: italic;
-}
+      .hoa-container:hover {
+          border: solid 1px rgb(44, 44, 44);
+          background-color: rgb(18, 18, 18);
+      }
 
-.person .big-img {
-  display: block;
-  max-width: 100%;
-  height: auto;
-}
-    </style>
+      .hoa-container .hoa-image {
+          text-align: center;
+          max-height: 215px;
+          border-bottom: solid 1px rgb(40, 40, 40);
+      }
+
+      .hoa-container .hoa-image img {
+          width: 100%;
+          height: 200px;
+          max-width: 200px;
+          max-height: 200px;
+          margin-bottom: 15px;
+      }
+
+      .hoa-container .hoa-name {
+          padding-top: 10px;
+          text-align: center;
+          color: white;
+          font-size: 20px;
+          font-weight: bold;
+      }
+
+      .hoa-container .hoa-description {
+          margin-top: 5px;
+          text-align: center;
+          color: rgb(200, 200, 200);
+          word-wrap: break-word;
+          overflow-y: auto;
+          height: 160px;
+      }
+
+      @media only screen and (max-width: 991px) {
+          .hoa-container {
+              width: 48%;
+          }
+      }
+
+      @media only screen and (max-width: 575px) {
+          .hoa-container {
+              width: 100%;
+          }
+      }
+
+      @media only screen and (max-width: 271px) {
+          .doxbin-text {
+              font-size: 9px;
+              line-height: 10px;
+          }
+
+          .hoa-title {
+              font-size: 16px;
+              letter-spacing: 2px;
+          }
+      }
+
+      ::-webkit-scrollbar {
+          /*scroll bar*/
+          width: 7px;
+      }
+
+      /* Track */
+      ::-webkit-scrollbar-track {
+          background: #cacaca;
+      }
+
+      /* Handle */
+      ::-webkit-scrollbar-thumb {
+          background: rgb(110, 110, 110);
+      }
+
+      /* Handle on hover */
+      ::-webkit-scrollbar-thumb:hover {
+          background: rgb(68, 68, 68);
+      }
+
+      .rainbow {
+          /* Font options */
+          text-shadow: 2px 2px 4px #000000;
+          /* Chrome, Safari, Opera */
+          -webkit-animation: rainbow 5s infinite;
+          /* Internet Explorer */
+          -ms-animation: rainbow 5s infinite;
+          /* Standar Syntax */
+          animation: rainbow 5s infinite;
+      }
+
+      /* Chrome, Safari, Opera */
+      @-webkit-keyframes rainbow {
+          0% {
+              color: red;
+          }
+
+          17% {
+              color: orange;
+          }
+
+          33% {
+              color: yellow;
+          }
+
+          50% {
+              color: green;
+          }
+
+          67% {
+              color: blue;
+          }
+
+          84% {
+              color: purple;
+          }
+
+          100% {
+              color: red;
+          }
+      }
+
+      /* Internet Explorer */
+      @-ms-keyframes rainbow {
+          0% {
+              color: red;
+          }
+
+          17% {
+              color: orange;
+          }
+
+          33% {
+              color: yellow;
+          }
+
+          50% {
+              color: green;
+          }
+
+          67% {
+              color: blue;
+          }
+
+          84% {
+              color: purple;
+          }
+
+          100% {
+              color: red;
+          }
+      }
+
+    .epic-container {
+      text-align: center;
+    }
+    
+    .epic-container h1 {
+        padding-top: 50px; /* Adjust the spacing as needed */
+    }
+
+    .epic-container p {
+        font-size: 16px; /* Change the font size as needed */
+        margin-bottom: 10px; /* Adjust the spacing as needed */
+    }
+
+    .epic-container a.back-button {
+        color: #fff; /* Change the color as needed */
+        text-decoration: none;
+        display: inline-block; /* Change to inline-block to fit content */
+        margin-top: 20px; /* Add margin-top to create space between paragraphs and button */
+        padding: 10px 20px;
+        background-color: #282828; /* Change the background color as needed */
+        border-radius: 4px; /* Adjust the border radius as needed */
+        transition: background-color 0.3s ease; /* Add smooth transition */
+    }
+
+    .epic-container a.back-button:hover {
+        background-color: #3d3d3d; /* Change the hover background color as needed */
+    }
+
+      /* Standar Syntax */
+      @keyframes rainbow {
+          0% {
+              color: red;
+          }
+
+          17% {
+              color: orange;
+          }
+
+          33% {
+              color: yellow;
+          }
+
+          50% {
+              color: green;
+          }
+
+          67% {
+              color: blue;
+          }
+
+          84% {
+              color: purple;
+          }
+
+          100% {
+              color: red;
+          }
+      }
+  </style>
 </head>
 <body>
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -144,13 +331,14 @@
             <ul class="nav navbar-nav">
                 <li><a href="https://secretprovider.github.io/doxbag.github.io">Home</a></li>
                 <li><a href="https://secretprovider.github.io/doxbag.github.io/upload.html">Add Paste</a></li>
-                <li class="active"><a href="https://secretprovider.github.io/doxbag.github.io/hoa.html">Hall of Autism</a></li>
+                <li><a href="https://secretprovider.github.io/doxbag.github.io/hoa.html">Hall of Autism</a></li>
+              <li class="active"><a href="https://secretprovider.github.io/doxbag.github.io/tos.html">TOS</a></li>
             </ul>
             <div class="sidebar-right"></div>
         </div>
     </div>
 </nav>
-    <div class="container">
+  <div class="epic-container">
         <h1>Important Message</h1>
         <p>Don't post children dox, CP, and don't use us to upload files. Additionally, Doxbag is made by skids who support Doxbin.</p>
         <p>Stay safe online.</p>
