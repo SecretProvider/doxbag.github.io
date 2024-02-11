@@ -37,9 +37,93 @@
             cursor: pointer;
             margin-top: 20px;
         }
+        .topbar {
+  background-color: #222;
+  font-family: Arial, sans-serif;
+  color: white;
+  padding: 0px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 9999;
+}
+
+.topbar a {
+  color: white;
+  text-decoration: none;
+  margin: 5px 10px;
+}
+
+.topbar a:last-child {
+  margin-right: 25px; /* Adjust the margin-right as needed */
+}
+
+.topbar a:hover {
+  text-decoration: underline;
+}
+
+/* Container styles */
+.container {
+  margin-top: 0px; /* Adjust top margin to avoid content behind topbar */
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+/* Hall of Fame styles */
+.hof {
+  border: 1px solid #ccc;
+  padding: 20px;
+  margin-bottom: 20px;
+  background-color: #f9f9f9;
+}
+
+.person {
+  width: calc(50% - 20px);
+  display: inline-block;
+  vertical-align: top;
+}
+
+.person img {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+.hof h2 {
+  margin-top: 0;
+}
+
+.hof p {
+  margin-bottom: 10px;
+}
+
+.hof .inductee {
+  font-weight: bold;
+}
+
+.hof .description {
+  font-style: italic;
+}
+
+.person .big-img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
     </style>
 </head>
 <body>
+    <div class="topbar">
+      <div class="container">
+        <span>Doxbag</span>
+        <div style="float:right;">
+          <a href="https://secretprovider.github.io/doxbag.github.io">Home</a>
+          <a href="https://secretprovider.github.io/doxbag.github.io/upload.html">Upload</a>
+          <a href="https://secretprovider.github.io/doxbag.github.io/hoa.html">Hall of Autism</a>
+        </div>
+      </div>
+    </div>
     <div class="container">
         <h1>Important Message</h1>
         <p>Don't post children dox, CP, and don't use us to upload files. Additionally, Doxbag is made by skids who support Doxbin.</p>
